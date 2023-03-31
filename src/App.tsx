@@ -1,5 +1,7 @@
+import { PopNotify } from './components/PopNotify'
+
 const App = () => {
-  return <div className="App"></div>
+  return <PopNotify title="" subject="" />
 }
 
 export default App

@@ -1,0 +1,132 @@
+@use '../../sass/index' as *;
+
+.display {
+  position: fixed;
+  width: 350px;
+  height: 100px;
+  border-radius: $border-radius;
+  @include common-shadow($theme-light, 'default');
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5.1%;
+    height: 100%;
+    border-radius: calc(#{$border-radius} - 2px) 0 0
+      calc(#{$border-radius} - 2px);
+
+    @include get-background-notify($theme-light, 'default');
+  }
+
+  &[data-shadow='false'] {
+    box-shadow: none;
+  }
+
+  &[data-theme='colored'] {
+    &[data-shadow='true'] {
+      @include common-shadow($theme-light, 'default');
+    }
+
+    @include get-background-notify($theme-colored, 'default');
+
+    &::after {
+      @include get-background-notify($theme-light, 'default');
+    }
+
+    &[data-type-notify='success'] {
+      &[data-shadow='true'] {
+        @include common-shadow($theme-light, 'success');
+      }
+
+      @include get-background-notify($theme-colored, 'success');
+
+      &::after {
+        @include get-background-notify($theme-light, 'success');
+      }
+    }
+
+    &[data-type-notify='warning'] {
+      &[data-shadow='true'] {
+        @include common-shadow($theme-light, 'warning');
+      }
+
+      @include get-background-notify($theme-colored, 'warning');
+
+      &::after {
+        @include get-background-notify($theme-light, 'warning');
+      }
+    }
+
+    &[data-type-notify='error'] {
+      &[data-shadow='true'] {
+        @include common-shadow($theme-light, 'error');
+      }
+
+      @include get-background-notify($theme-colored, 'error');
+
+      &::after {
+        @include get-background-notify($theme-light, 'error');
+      }
+    }
+  }
+
+  &[data-theme='dark'] {
+    &[data-shadow='true'] {
+      @include common-shadow($theme-dark, 'default');
+    }
+
+    @include get-background-notify(
+      $theme-dark,
+      'default',
+      'background-content'
+    );
+
+    &::after {
+      @include get-background-notify($theme-dark, 'default');
+    }
+
+    &[data-type-notify='success'] {
+      @include common-shadow($theme-dark, 'success');
+
+      @include get-background-notify(
+        $theme-dark,
+        'success',
+        'background-content'
+      );
+
+      &::after {
+        @include get-background-notify($theme-dark, 'success');
+      }
+    }
+
+    &[data-type-notify='warning'] {
+      @include common-shadow($theme-dark, 'warning');
+
+      @include get-background-notify(
+        $theme-dark,
+        'warning',
+        'background-content'
+      );
+
+      &::after {
+        @include get-background-notify($theme-dark, 'warning');
+      }
+    }
+
+    &[data-type-notify='error'] {
+      @include common-shadow($theme-dark, 'error');
+
+      @include get-background-notify(
+        $theme-dark,
+        'error',
+        'background-content'
+      );
+
+      &::after {
+        @include get-background-notify($theme-dark, 'error');
+      }
+    }
+  }
+}

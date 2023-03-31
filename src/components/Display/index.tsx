@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import { type IDisplayProps } from '../../constant/types/displayProps'
+import './index.scss'
 
 const Display: React.FC<IDisplayProps> = ({
   children,
   theme,
   shadow,
+  typeNotify,
   mobile,
   onClosed,
   onOpened,
@@ -35,11 +37,10 @@ const Display: React.FC<IDisplayProps> = ({
 
   return (
     <div
-      className={`display ${display ? 'display--open' : 'display--close'} ${
-        shadow ? 'display--shadow' : ''
-      } ${mobile ? 'display--mobile' : ''} ${
-        theme ? `display--${theme}` : 'display--light'
-      } ${animation ? `display--${animation}` : 'display--slide'}`}
+      className={`display`}
+      data-theme={'colored'}
+      data-type-notify={'error'}
+      data-shadow={false}
       onClick={() => {
         if (closeOnClick) {
           setDisplay(false)

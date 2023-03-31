@@ -1,0 +1,64 @@
+@use './variables' as *;
+
+@function create-box-shadow($background-color) {
+  @return 0 5px 15px rgba($background-color, 0.24);
+}
+
+@mixin get-background-notify(
+  $theme,
+  $type-notify,
+  $type-background: 'background-display'
+) {
+  $background-notify: map-get(map-get($theme, $type-notify), $type-background);
+
+  @if $background-notify {
+    background-color: $background-notify;
+  }
+}
+
+@mixin common-shadow($theme, $type-notify) {
+  $background-notify: map-get(
+    map-get($theme, $type-notify),
+    'background-display'
+  );
+
+  @if $background-notify {
+    box-shadow: create-box-shadow($background-notify);
+  }
+}
+
+@mixin theme-success-style($theme) {
+  &[data-shadow='true'] {
+    @include common-shadow($theme, 'success');
+  }
+
+  @include get-background-notify($theme, 'success');
+
+  &::after {
+    @include get-background-notify($theme, 'success');
+  }
+}
+
+@mixin theme-warning-style($theme) {
+  &[data-shadow='true'] {
+    @include common-shadow($theme, 'warning');
+  }
+
+  @include get-background-notify($theme, 'warning');
+
+  &::after {
+    @include get-background-notify($theme, 'warning');
+  }
+}
+
+@mixin theme-error-style($theme) {
+  &[data-shadow='true'] {
+    @include common-shadow($theme, 'error');
+  }
+
+  @include get-background-notify($theme, 'error');
+
+  &::after {
+    @include get-background-notify($theme, 'error');
+  }
+}

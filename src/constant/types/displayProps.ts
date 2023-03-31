@@ -1,18 +1,19 @@
 interface Theme {
-  dark: string
-  light: string
-  colorful: string
+  dark?: string
+  light?: string
+  colorful?: string
 }
 
 interface Animation {
-  slide: string
-  none: string
+  slide?: string
+  none?: string
 }
 
 export interface IDisplayProps {
-  children: React.ReactNode
+  children?: React.ReactNode
   theme?: Theme
   shadow?: boolean
+  typeNotify?: string
   mobile?: boolean
   onClosed?: () => void
   onOpened?: () => void

@@ -1,9 +1,3 @@
-interface Theme {
-  dark?: string
-  light?: string
-  colorful?: string
-}
-
 interface Animation {
   slide?: string
   none?: string
@@ -11,7 +5,7 @@ interface Animation {
 
 export interface IDisplayProps {
   children?: React.ReactNode
-  theme?: Theme
+  theme?: 'light' | 'dark' | 'colored'
   shadow?: boolean
   typeNotify?: string
   mobile?: boolean

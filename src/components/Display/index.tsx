@@ -38,9 +38,9 @@ const Display: React.FC<IDisplayProps> = ({
   return (
     <div
       className={`display`}
-      data-theme={'colored'}
-      data-type-notify={'error'}
-      data-shadow={false}
+      data-theme={theme}
+      data-type-notify={typeNotify}
+      data-shadow={shadow}
       onClick={() => {
         if (closeOnClick) {
           setDisplay(false)

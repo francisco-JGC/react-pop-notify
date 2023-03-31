@@ -3,10 +3,13 @@ import Display from '../Display'
 
 export const PopNotify: React.FC<IPopNotifyProps> = ({
   title,
-  subject
+  subject,
+  theme,
+  typeNotify,
+  shadow
 }: IPopNotifyProps) => {
   return (
-    <Display>
+    <Display theme={theme} typeNotify={typeNotify} shadow={shadow}>
       <div className="pop-notify">
         <div className="pop-notify__title">{title}</div>
         <div className="pop-notify__subject">{subject}</div>

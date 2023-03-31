@@ -1,0 +1,68 @@
+// Globals variables
+$white-color: rgb(255, 255, 255);
+$black-color: rgb(0, 0, 0);
+
+// Border variables rules
+$border-radius: 20px;
+$border-radius-small: 10px;
+$border-radius-large: 30px;
+
+// Font variables rules responsive
+$font-family: 'Montserrat', sans-serif;
+$font-size-title: 1.5em;
+$font-size-subtitle: 1.2em;
+
+// Themes variables
+$theme-variants: (
+  'light': 'light',
+  'colored': 'colored',
+  'dark': 'dark'
+);
+
+$theme-light: (
+  'default': (
+    'background-display': rgb(0, 153, 255)
+  ),
+  'success': (
+    'background-display': rgb(0, 220, 125)
+  ),
+  'warning': (
+    'background-display': rgb(242, 235, 52)
+  ),
+  'error': (
+    'background-display': rgb(255, 99, 71)
+  )
+);
+
+$theme-colored: (
+  'default': (
+    'background-display': rgb(197, 232, 255)
+  ),
+  'success': (
+    'background-display': rgb(197, 255, 230)
+  ),
+  'warning': (
+    'background-display': rgb(255, 252, 210)
+  ),
+  'error': (
+    'background-display': rgb(255, 220, 213)
+  )
+);
+$theme-dark: (
+  'default': (
+    'background-display': rgb(0, 43, 72),
+    'background-content': rgb(3, 66, 108)
+  ),
+  'success': (
+    'background-display': rgb(0, 80, 45),
+    'background-content': rgb(3, 103, 59)
+  ),
+  'warning': (
+    'background-display': rgb(90, 87, 0),
+    'background-content': rgb(124, 100, 4)
+  ),
+  'error': (
+    'background-display': rgb(97, 15, 0),
+    'background-content': rgb(143, 17, 17)
+  )
+);
